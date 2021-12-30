@@ -1,0 +1,57 @@
+html {
+	background-color: grey;
+	/*  */
+	/* background-image: linear-gradient(
+		to bottom right,
+		rgb(109, 14, 225),
+		rgb(228, 199, 117)
+	); */
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(18, 5, 117),
+		rgb(107, 29, 9)
+	);
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+.App nav {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+}
+
+.App nav a {
+	text-decoration: none;
+	margin: 1em;
+	/* Change color to black eventually, {DarkMode}*/
+	color: white;
+}
+
+.component-container {
+	border: 3px solid rgb(200, 202, 203);
+	border-radius: 12px;
+	margin: 1em;
+}
+
+.component-container h1 {
+	margin: 1em 2em;
+	font-size: 1.5em;
+}
+
+.component-inner-card {
+	display: inline-block;
+	margin: 2em;
+}
+
+.component-inner-card h2 {
+	font-size: 1.3em;
+}
+
+.component-nav {
+	margin: 1em 2em;
+}

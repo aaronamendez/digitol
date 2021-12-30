@@ -1,0 +1,19 @@
+{
+	"name": "digitol",
+	"version": "1.0.0",
+	"description": "App",
+	"main": "index.js",
+	"scripts": {
+		"api": "npm start --prefix api",
+		"client": "npm start --prefix client",
+		"start": "concurrently \"npm run api\" \"npm run client\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Aaron Mendez",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.24.0",
+		"concurrently": "^6.5.1"
+	}
+}
