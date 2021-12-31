@@ -3,13 +3,23 @@ import axios from 'axios';
 import { Button, Input } from '../../styled-components/';
 
 const Users = () => {
-	const [users, setUsers] = useState([]);
+	const initialUsers = [];
+	const initialSearch = {
+		value: '',
+	};
+
+	const [users, setUsers] = useState(initialUsers);
+	const [search, setSearch] = useState(initialSearch);
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setSearch({ ...search, [name]: value });
+	};
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/api/users')
 			.then((res) => {
-				console.log(res.data);
 				setUsers(res.data);
 			})
 			.catch((err) => console.error(err));
@@ -19,9 +29,15 @@ const Users = () => {
 		<div className="component-container">
 			<h1>Users</h1>
 			<div className="component-nav">
-				<Input type="text" placeholder="Search Client" />
+				<Input
+					type="text"
+					name="value"
+					value={search.value}
+					onChange={onChange}
+					placeholder="Search Client"
+				/>
 				<Button>Search</Button>
-				<Button>Create New Client</Button>
+				<Button>Create New User</Button>
 			</div>
 			{users.map((user, idx) => {
 				return (

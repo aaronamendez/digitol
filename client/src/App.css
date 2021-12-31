@@ -33,13 +33,15 @@ body {
 }
 
 .component-container {
-	border: 3px solid rgb(200, 202, 203);
+	background-color: rgb(235, 235, 235);
+	color: black;
 	border-radius: 12px;
 	margin: 1em;
 }
 
 .component-container h1 {
 	margin: 1em 2em;
+	padding: 1em;
 	font-size: 1.5em;
 }
 

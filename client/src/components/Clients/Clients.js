@@ -25,9 +25,9 @@ const Clients = () => {
 
 			{clients.map((client, idx) => {
 				return (
-					<div className="component-inner-card">
+					<div className="component-inner-card" key={idx}>
 						<ul key={idx}>
-							<li>ID:{client.id}</li>
+							<li>ID: {client.id}</li>
 							<li>Name: {client.name}</li>
 							<li>Address: {client.address}</li>
 						</ul>
