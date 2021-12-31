@@ -43,15 +43,22 @@ router.get('/api/users', (req, res) => {
 			id: 2,
 			name: 'Anna Marie',
 			email: 'anna@nyc.com',
-			isAdmin: false,
+			isAdmin: true,
 			roles: ['Office Worker', 'Customer Service', 'Remote'],
 		},
 		{
 			id: 3,
-			name: 'Rachel Israel',
+			name: 'Rachel',
 			email: 'rachel@nyc.com',
 			isAdmin: true,
 			roles: ['Office Worker', 'Customer Service', 'Remote'],
+		},
+		{
+			id: 4,
+			name: 'Lazlo',
+			email: 'lazlo@nyc.com',
+			isAdmin: false,
+			roles: ['Field Worker', 'Cleaner'],
 		},
 	];
 
