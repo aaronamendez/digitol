@@ -22,13 +22,21 @@ body {
 .App nav {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em;
+	margin: 1em;
 }
 
 .App nav a {
 	text-decoration: none;
 	margin: 1em;
+	padding: 1em;
 	/* Change color to black eventually, {DarkMode}*/
+	color: white;
+	transition: color, background-color, 0.5s;
+}
+
+.App nav a:hover {
+	border-radius: 0.5em;
+	background-color: rgb(78, 52, 85);
 	color: white;
 }
 
@@ -37,17 +45,28 @@ body {
 	color: black;
 	border-radius: 12px;
 	margin: 1em;
+	margin-top: 3em;
+	padding-bottom: 1em;
 }
 
 .component-container h1 {
-	margin: 1em 2em;
 	padding: 1em;
 	font-size: 1.5em;
 }
 
 .component-inner-card {
 	display: inline-block;
-	margin: 2em;
+	margin: 1em;
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+	transition: color, background-color, 0.5s;
+}
+
+.component-inner-card:hover {
+	background-color: navy;
+	color: white;
 }
 
 .component-inner-card h2 {

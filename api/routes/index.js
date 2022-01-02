@@ -30,18 +30,52 @@ router.get('/api/clients', (req, res) => {
 	res.json(data);
 });
 
+router.get('/api/jobs', (req, res) => {
+	const data = [
+		{
+			id: 1,
+			client: 'Construction Builders LLC',
+			address: '905 West 42nd Street',
+			cleaners: ['Lazlo', 'Sarah'],
+			startTime: 'January 1, 2022: 10:00 EST',
+			price: '$320',
+			supplies: true,
+		},
+		{
+			id: 2,
+			client: 'DigitalGenSolutions',
+			address: '975 Roosevelt Avenue',
+			cleaners: ['Sarah', 'Guadalupe'],
+			startTime: 'January 3, 2022: 9:00 EST',
+			price: '$320',
+			supplies: false,
+		},
+		{
+			id: 3,
+			client: 'Locksmith Paragon',
+			address: 'West 4th street',
+			cleaners: ['Lazlo', 'Guadalupe'],
+			startTime: 'January 5, 2022: 15:00 EST',
+			price: '$320',
+			supplies: true,
+		},
+	];
+
+	res.json(data);
+});
+
 router.get('/api/users', (req, res) => {
 	const data = [
 		{
 			id: 1,
-			name: 'Melissa Evangelista',
+			name: 'Melissa',
 			email: 'melissa@nyc.com',
 			isAdmin: true,
 			roles: ['Office Worker', 'Customer Service', 'Remote'],
 		},
 		{
 			id: 2,
-			name: 'Anna Marie',
+			name: 'Annamaria',
 			email: 'anna@nyc.com',
 			isAdmin: true,
 			roles: ['Office Worker', 'Customer Service', 'Remote'],
@@ -58,7 +92,21 @@ router.get('/api/users', (req, res) => {
 			name: 'Lazlo',
 			email: 'lazlo@nyc.com',
 			isAdmin: false,
-			roles: ['Field Worker', 'Cleaner'],
+			roles: ['Office Worker', 'Customer Service', 'Remote'],
+		},
+		{
+			id: 5,
+			name: 'Sarah',
+			email: 'sarah@nyc.com',
+			isAdmin: false,
+			roles: ['Service Provider', 'Cleaner'],
+		},
+		{
+			id: 6,
+			name: 'Guadalupe',
+			email: 'guadalupe@nyc.com',
+			isAdmin: false,
+			roles: ['Service Provider', 'Cleaner'],
 		},
 	];
 

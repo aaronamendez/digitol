@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // Button
 export const Button = styled.button`
-	background-color: black;
+	background-color: navy;
 	color: white;
 	border: 1px solid white;
 	border-radius: 0.5em;
@@ -14,7 +14,7 @@ export const Button = styled.button`
 
 	&:hover {
 		// border: 1px solid green;
-		background-color: #0594ed;
+		background-color: #57b55d;
 		color: white;
 	}
 `;
