@@ -40,6 +40,10 @@ body {
 	color: white;
 }
 
+.component-nav {
+	margin: 1em 2em;
+}
+
 .component-container {
 	background-color: rgb(235, 235, 235);
 	color: black;
@@ -47,11 +51,26 @@ body {
 	margin: 1em;
 	margin-top: 3em;
 	padding-bottom: 1em;
+	/* opacity: 0.5; */
 }
 
 .component-container h1 {
-	padding: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
 	font-size: 1.5em;
+}
+
+.component-container h2 {
+	font-size: 1.3em;
+}
+
+.component-container h3 {
+	font-size: 1.2em;
+}
+
+.component-container a {
+	text-decoration: none;
+	color: black;
 }
 
 .component-inner-card {
@@ -73,6 +92,21 @@ body {
 	font-size: 1.3em;
 }
 
-.component-nav {
-	margin: 1em 2em;
+.info-container {
+	margin: 2em;
+	border: 1px solid black;
+	font-size: 1.3em;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 500px) {
+	/* .App nav {
+		for test
+		background-color: red; 
+	} */
+
+	.App nav a {
+		margin: 0;
+	}
 }

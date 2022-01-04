@@ -11,6 +11,7 @@ import Jobs from './components/Jobs/Jobs';
 import Job from './components/Jobs/Job';
 import Users from './components/Users/Users';
 import User from './components/Users/User';
+import ErrorNotFound from './components/Errors/ErrorNotFound';
 
 // Styles
 import './App.css';
@@ -37,6 +38,9 @@ function App() {
 				<Route path="/clients/:clientId" element={<Client />} />
 				<Route path="/jobs/:jobId" element={<Job />} />
 				<Route path="/users/:userId" element={<User />} />
+
+				{/* Error Route */}
+				<Route path="*" element={<ErrorNotFound />} />
 			</Routes>
 		</div>
 	);

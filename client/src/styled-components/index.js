@@ -17,6 +17,10 @@ export const Button = styled.button`
 		background-color: #57b55d;
 		color: white;
 	}
+
+	@media (max-width: 500px) {
+		margin-left: 0;
+	}
 `;
 
 export const Input = styled.input`
@@ -25,4 +29,8 @@ export const Input = styled.input`
 	border-radius: 0.5em;
 	font-size: 1em;
 	padding: 0.5em;
+
+	@media (max-width: 500px) {
+		margin-bottom: 0.5em;
+	}
 `;

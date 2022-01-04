@@ -25,6 +25,7 @@ const Jobs = () => {
 			})
 			.catch((err) => console.error(err));
 	}, []);
+
 	return (
 		<div className="component-container">
 			<h1>Jobs</h1>
@@ -38,58 +39,158 @@ const Jobs = () => {
 				/>
 				<Button>Create New Job</Button>
 			</div>
-			{/* Supplies and cleaners searcb fix needed*/}
-			{jobs
-				.filter((val) => {
-					if (search.value === '') {
-						return val;
-					} else if (
-						`#${val.id}`.toLowerCase().includes(search.value.toLowerCase())
-					) {
-						return val;
-					} else if (
-						val.client.toLowerCase().includes(search.value.toLowerCase())
-					) {
-						return val;
-					} else if (
-						val.address.toLowerCase().includes(search.value.toLowerCase())
-					) {
-						return val;
-					} else if (
-						val.startTime
-							.toString()
-							.toLowerCase()
-							.includes(search.value.toLowerCase())
-					) {
-						return val;
-					} else if (
-						val.price
-							.toString()
-							.toLowerCase()
-							.includes(search.value.toLowerCase())
-					) {
-						return val;
-					}
-				})
-				.map((job, idx) => {
-					return (
-						<Link to={`/jobs/${job.id}`} key={idx}>
-							<div className="component-inner-card" id={job.id}>
-								<ul>
-									<li>ID: #{job.id}</li>
-									<li>Client: {job.client}</li>
-									<li>Address: {job.address}</li>
-									{job.cleaners.map((cleaner, idx) => {
-										return <li key={idx}>{cleaner}</li>;
-									})}
-									<li>Start Time: {job.startTime}</li>
-									<li>Price: {job.price}</li>
-									<li>Supplies: {job.supplies ? 'Yes' : 'No'}</li>
-								</ul>
-							</div>
-						</Link>
-					);
-				})}
+			<div className="jobs-container">
+				{jobs
+					.filter((val) => {
+						if (search.value === '') {
+							return val;
+						} else if (
+							`#${val.id}`.toLowerCase().includes(search.value.toLowerCase())
+						) {
+							return val;
+						} else if (
+							val.name.toLowerCase().includes(search.value.toLowerCase())
+						) {
+							return val;
+						} else if (
+							val.address.toLowerCase().includes(search.value.toLowerCase())
+						) {
+							return val;
+						} else if (
+							val.startTime.toLowerCase().includes(search.value.toLowerCase())
+						) {
+							return val;
+						} else if (
+							val.supplies === true &&
+							search.value.toLowerCase().includes('yes')
+						) {
+							return val;
+						} else if (
+							val.supplies === false &&
+							search.value.toLowerCase().includes('no')
+						) {
+							return val;
+						} else if (
+							val.price.toLowerCase().includes(search.value.toLowerCase())
+						) {
+							return val;
+						} else {
+							return null;
+						}
+					})
+					.map((job, idx) => {
+						return (
+							<Link to={`/jobs/${job.id}`} key={idx}>
+								<div className="component-inner-card" id={job.id}>
+									<h2>Job ID: #{job.id}</h2>
+									<div>
+										<h3>{job.name}</h3>
+										<h3>{job.address}</h3>
+									</div>
+
+									<ul>
+										<li>Start Time: {job.startTime}</li>
+										<li>Supplies Needed: {job.supplies ? 'Yes' : 'No'}</li>
+										<li>Price: ${job.price}</li>
+										<h4>Cleaners:</h4>
+										{job.cleaners
+											.filter((val) => {
+												if (
+													val.name
+														.toLowerCase()
+														.includes(search.value.toLowerCase())
+												) {
+													return val;
+												} else {
+													return null;
+												}
+											})
+											.map((cleaner) => {
+												return (
+													<div key={cleaner.id}>
+														<li>{cleaner.name}</li>
+													</div>
+												);
+											})}
+									</ul>
+								</div>
+							</Link>
+						);
+					})}
+			</div>
+			{/* {jobs.map((job, idx) => {
+				return (
+					<div key={idx}>
+						{job.jobs
+							.filter((val) => {
+								if (
+									`#${val.id}`
+										.toLowerCase()
+										.includes(search.value.toLowerCase())
+								) {
+									return val;
+								} else if (
+									job.name.toLowerCase().includes(search.value.toLowerCase())
+								) {
+									return val;
+								} else if (
+									job.address.toLowerCase().includes(search.value.toLowerCase())
+								) {
+									return val;
+								} else if (
+									val.startTime
+										.toLowerCase()
+										.includes(search.value.toLowerCase())
+								) {
+									return val;
+								} else if (
+									val.supplies === true &&
+									search.value.toLowerCase().includes('yes')
+								) {
+									return val;
+								} else if (
+									val.supplies === false &&
+									search.value.toLowerCase().includes('no')
+								) {
+									return val;
+								} else if (
+									val.price.toLowerCase().includes(search.value.toLowerCase())
+								) {
+									return val;
+								}
+
+								// Maybe filter by cleaner as well?
+							})
+							.map((job, idx) => {
+								return (
+									<Link to={`/jobs/${job.id}`} key={idx}>
+										<div className="component-inner-card" id={job.id}>
+											<h2>Job ID: #{job.id}</h2>
+											<div>
+												<h3>{job.name}</h3>
+												<h3>{job.address}</h3>
+											</div>
+
+											<ul>
+												<li>Start Time: {job.startTime}</li>
+												<li>Supplies Needed: {job.supplies ? 'Yes' : 'No'}</li>
+												<li>Price: ${job.price}</li>
+												<h4>Cleaners:</h4>
+												{job.cleaners.map((cleaner) => {
+													return (
+														<div key={cleaner.id}>
+															<li>{cleaner.name}</li>
+														</div>
+													);
+												})}
+											</ul>
+										</div>
+									</Link>
+								);
+							})}
+					</div>
+				);
+			})} */}
 		</div>
 	);
 };
