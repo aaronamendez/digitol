@@ -13,7 +13,7 @@ const Client = () => {
 			.then((res) => {
 				res.data.filter((obj) => {
 					if (`${obj.id}` === clientId) {
-						console.log(obj);
+						// console.log(obj);
 						setClient(obj);
 					} else {
 						return null;

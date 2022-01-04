@@ -94,8 +94,20 @@ body {
 
 .info-container {
 	margin: 2em;
+	padding: 1em;
+	padding-bottom: 2em;
 	border: 1px solid black;
 	font-size: 1.3em;
+	border-radius: 5px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+.info-container h2 {
+	text-align: center;
+}
+
+.info-container p {
+	padding-top: 1em;
 }
 
 /* MOBILE RESPONSIVE */
