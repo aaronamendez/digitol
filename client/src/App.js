@@ -41,6 +41,7 @@ function App() {
 
 				{/* Error Route */}
 				<Route path="*" element={<ErrorNotFound />} />
+				<Route path="/clients/*" element={<ErrorNotFound />} />
 			</Routes>
 		</div>
 	);

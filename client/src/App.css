@@ -106,8 +106,19 @@ body {
 	text-align: center;
 }
 
-.info-container p {
+.info-container p,
+h4 {
 	padding-top: 1em;
+}
+
+.go-back {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 5em;
+}
+
+.go-back a {
+	text-decoration: none;
 }
 
 /* MOBILE RESPONSIVE */

@@ -23,6 +23,24 @@ export const Button = styled.button`
 	}
 `;
 
+export const BackButton = styled.button`
+	text-align: center;
+	background-color: navy;
+	color: white;
+	border: 1px solid white;
+	border-radius: 0.5em;
+	cursor: pointer;
+	font-size: 1em;
+	padding: 1em;
+	transition: color, background-color 0.5s;
+
+	&:hover {
+		// border: 1px solid green;
+		background-color: #57b55d;
+		color: white;
+	}
+`;
+
 export const Input = styled.input`
 	color: black;
 	border: 1px solid white;

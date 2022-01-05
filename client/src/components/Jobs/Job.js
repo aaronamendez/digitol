@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './index.css';
+
+import { BackButton } from '../../styled-components/index';
+
+const initialJob = {};
 
 const Job = () => {
 	// console.log(useParams());
 	const { jobId } = useParams();
-	const [job, setJob] = useState({});
+	const [job, setJob] = useState(initialJob);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState();
 
 	useEffect(() => {
+		setLoading(true);
 		axios
 			.get('http://localhost:5000/api/jobs')
 			.then((res) => {
@@ -21,11 +28,28 @@ const Job = () => {
 					}
 				});
 			})
-			.catch((err) => console.error(err));
+			.catch((err) => setError(err))
+			.finally(() => {
+				setLoading(false);
+			});
 	}, []);
+
+	if (loading) {
+		return <p>Data is loading ...</p>;
+	}
+
+	if (error || !Array.isArray(job.cleaners)) {
+		return <p>There was an error loading your data.</p>;
+	}
+
 	return (
 		<div className="component-container">
 			<h1>Job Information</h1>
+			<div className="go-back">
+				<Link to="/jobs">
+					<BackButton>&laquo; Back</BackButton>
+				</Link>
+			</div>
 			<div className="info-container">
 				<h2>{job.name}</h2>
 				<div className="row-container">
@@ -37,10 +61,12 @@ const Job = () => {
 						<p>Price: ${job.price}</p>
 					</div>
 					<div className="row">
-						<p>Cleaners:</p>
-						{job.cleaners.map((cleaner) => {
-							return <p>{cleaner.name}</p>;
-						})}
+						<h4>Cleaners:</h4>
+						<div>
+							{job.cleaners.map((cleaner) => (
+								<p key={cleaner.id}>{cleaner.name}</p>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
