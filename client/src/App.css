@@ -44,6 +44,10 @@ body {
 	margin: 1em 2em;
 }
 
+.component-nav button {
+	float: right;
+}
+
 .component-container {
 	background-color: rgb(235, 235, 235);
 	color: black;
