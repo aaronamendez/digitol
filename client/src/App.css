@@ -74,7 +74,6 @@ body {
 }
 
 .component-inner-card {
-	display: inline-block;
 	margin: 1em;
 	padding: 1em;
 	border: 1px solid black;
@@ -84,7 +83,7 @@ body {
 }
 
 .component-inner-card:hover {
-	background-color: navy;
+	background-color: rgb(82, 40, 71);
 	color: white;
 }
 
@@ -111,6 +110,24 @@ h4 {
 	padding-top: 1em;
 }
 
+.info-container label input {
+	margin-left: 20%;
+}
+
+.info-container form {
+	width: 50%;
+}
+
+.info-container input[type='text'] {
+	width: 100%;
+	padding: 1em 1.2em;
+	margin: 0.8em 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
 .go-back {
 	display: flex;
 	justify-content: flex-end;
@@ -119,6 +136,14 @@ h4 {
 
 .go-back a {
 	text-decoration: none;
+}
+
+/* Disabled */
+button:disabled {
+	background-color: grey;
+}
+button:disabled:hover {
+	background-color: grey;
 }
 
 /* MOBILE RESPONSIVE */

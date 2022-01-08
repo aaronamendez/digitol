@@ -39,7 +39,9 @@ const Clients = () => {
 					value={search.value}
 				/>
 				{/* <Button>Search</Button> */}
-				<Button>Create New Client</Button>
+				<Link to="/clients/new">
+					<Button>Create New Client</Button>
+				</Link>
 			</div>
 
 			{clients
@@ -59,10 +61,12 @@ const Clients = () => {
 					) {
 						return val;
 					}
+
+					return null;
 				})
 				.map((client, idx) => {
 					return (
-						<Link to={`/clients/${client.id}`} key={idx}>
+						<Link className="test" to={`/clients/${client.id}`} key={idx}>
 							<div className="component-inner-card" id={client.id}>
 								<ul key={idx}>
 									<li>ID: #{client.id}</li>

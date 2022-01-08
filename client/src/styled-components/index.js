@@ -28,7 +28,7 @@ export const BackButton = styled.button`
 	background-color: navy;
 	color: white;
 	border: 1px solid white;
-	border-radius: 0.5em;
+	border-radius: 1em;
 	cursor: pointer;
 	font-size: 1em;
 	padding: 1em;

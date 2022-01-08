@@ -57,6 +57,8 @@ const Users = () => {
 					) {
 						return val;
 					}
+
+					return null;
 				})
 				.map((user, idx) => {
 					return (

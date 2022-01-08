@@ -10,16 +10,19 @@ const Client = () => {
 	const [client, setClient] = useState({});
 
 	useEffect(() => {
+		const idInURL = {
+			id: clientId,
+		};
 		axios
 			.get('http://localhost:5000/api/clients')
 			.then((res) => {
 				res.data.filter((obj) => {
-					if (`${obj.id}` === clientId) {
+					if (`${obj.id}` === idInURL.id) {
 						// console.log(obj);
 						setClient(obj);
-					} else {
-						return null;
 					}
+
+					return null;
 				});
 			})
 			.catch((err) => console.error(err));

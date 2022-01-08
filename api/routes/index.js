@@ -9,6 +9,18 @@ router.get('/api/clients', (req, res) => {
 	res.json(CLIENT_DATA);
 });
 
+router.post('/api/clients', (req, res) => {
+	const { id, name, address } = req.body;
+	const obj = {
+		id,
+		name,
+		address,
+	};
+	console.log(obj);
+	CLIENT_DATA.push(obj);
+	res.json({ msg: 'Client Created!' });
+});
+
 router.get('/api/jobs', (req, res) => {
 	res.json(JOB_DATA);
 });

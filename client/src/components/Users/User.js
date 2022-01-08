@@ -21,9 +21,9 @@ const User = () => {
 					if (`${obj.id}` === userId) {
 						// console.log(obj);
 						setUser(obj);
-					} else {
-						return null;
 					}
+
+					return null;
 				});
 			})
 			.catch((err) => setError(err))

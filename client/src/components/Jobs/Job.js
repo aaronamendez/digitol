@@ -23,9 +23,9 @@ const Job = () => {
 					if (`${obj.id}` === jobId) {
 						// console.log(obj);
 						setJob(obj);
-					} else {
-						return null;
 					}
+
+					return null;
 				});
 			})
 			.catch((err) => setError(err))

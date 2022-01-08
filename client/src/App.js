@@ -7,6 +7,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Clients from './components/Clients/Clients';
 import Client from './components/Clients/Client';
+import NewClient from './components/Clients/NewClient';
 import Jobs from './components/Jobs/Jobs';
 import Job from './components/Jobs/Job';
 import Users from './components/Users/Users';
@@ -36,6 +37,7 @@ function App() {
 
 				{/* Specified Routing */}
 				<Route path="/clients/:clientId" element={<Client />} />
+				<Route path="/clients/new" element={<NewClient />} />
 				<Route path="/jobs/:jobId" element={<Job />} />
 				<Route path="/users/:userId" element={<User />} />
 

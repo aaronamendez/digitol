@@ -74,9 +74,8 @@ const Jobs = () => {
 							val.price.toLowerCase().includes(search.value.toLowerCase())
 						) {
 							return val;
-						} else {
-							return null;
 						}
+						return null;
 					})
 					.map((job, idx) => {
 						return (
