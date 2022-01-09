@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { v4 as uuid } from 'uuid';
 import * as yup from 'yup';
+import { addClientValidations } from '../../validations/schema';
 
 import { BackButton } from '../../styled-components/';
 import { Button } from '../../styled-components/';
-
-import { addClientValidations } from '../../validations/schema';
 
 const initialClient = {
 	id: '',
@@ -27,7 +27,7 @@ const NewClient = () => {
 	const [disabled, setDisabled] = useState(initialDisabled);
 	const [errors, setErrors] = useState(initialErrors);
 
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 
 	const validateClient = (name, value) => {
 		yup
@@ -92,6 +92,7 @@ const NewClient = () => {
 						name="clientName"
 						placeholder="Enter Name"
 						onChange={change}
+						value={form.clientName}
 					/>
 					<label>Address</label>
 					<input
@@ -99,6 +100,7 @@ const NewClient = () => {
 						name="address"
 						placeholder="Enter Address"
 						onChange={change}
+						value={form.address}
 					/>
 					<Button disabled={disabled}>Create</Button>
 				</form>

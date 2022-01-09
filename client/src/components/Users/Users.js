@@ -37,7 +37,9 @@ const Users = () => {
 					onChange={change}
 					placeholder="Search User"
 				/>
-				<Button>Create New User</Button>
+				<Link to={'/users/new'}>
+					<Button>Create New User</Button>
+				</Link>
 			</div>
 			{/* Same fix for previos filter, isAdmin and roles (binary, array) */}
 			{users

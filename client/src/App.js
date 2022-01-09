@@ -12,6 +12,7 @@ import Jobs from './components/Jobs/Jobs';
 import Job from './components/Jobs/Job';
 import Users from './components/Users/Users';
 import User from './components/Users/User';
+import NewUser from './components/Users/NewUser';
 import ErrorNotFound from './components/Errors/ErrorNotFound';
 
 // Styles
@@ -40,6 +41,7 @@ function App() {
 				<Route path="/clients/new" element={<NewClient />} />
 				<Route path="/jobs/:jobId" element={<Job />} />
 				<Route path="/users/:userId" element={<User />} />
+				<Route path="/users/new" element={<NewUser />} />
 
 				{/* Error Route */}
 				<Route path="*" element={<ErrorNotFound />} />

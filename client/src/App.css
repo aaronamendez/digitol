@@ -132,6 +132,22 @@ h4 {
 	box-sizing: border-box;
 }
 
+.info-container h4 {
+	/* margin-bottom: 1em; */
+}
+
+.info-container .roles input[type='checkbox'] {
+	display: block;
+}
+
+.info-container .roles label {
+	font-size: 0.8em;
+}
+
+.info-container button {
+	margin-top: 1em;
+}
+
 .go-back {
 	display: flex;
 	justify-content: flex-end;
