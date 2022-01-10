@@ -21,6 +21,9 @@ export const addUserValidations = yup.object().shape({
 		.email('email is not a valid email address')
 		.required('email is required')
 		.min(5, 'email must be at least 5 characters'),
-	isAdmin: yup.boolean().required('admin field is required'),
-	roles: yup.string().oneOf(['Office Worker', 'Customer Service', 'Remote']),
+	isAdmin: yup.string(),
+	'Office Worker': yup.boolean(),
+	'Customer Service': yup.boolean(),
+	Remote: yup.boolean(),
+	// roles: yup.string().oneOf(['Office Worker', 'Customer Service', 'Remote']),
 });

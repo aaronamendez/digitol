@@ -132,10 +132,6 @@ h4 {
 	box-sizing: border-box;
 }
 
-.info-container h4 {
-	/* margin-bottom: 1em; */
-}
-
 .info-container .roles input[type='checkbox'] {
 	display: block;
 }

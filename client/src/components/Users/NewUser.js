@@ -14,7 +14,9 @@ const initialUser = {
 	name: '',
 	email: '',
 	isAdmin: false,
-	roles: [],
+	'Office Worker': false,
+	'Customer Service': false,
+	Remote: false,
 };
 
 const initialDisabled = true;
@@ -22,8 +24,7 @@ const initialDisabled = true;
 const initialErrors = {
 	name: '',
 	email: '',
-	isAdmin: false,
-	roles: [],
+	isAdmin: '',
 };
 
 const NewUser = () => {
@@ -46,9 +47,10 @@ const NewUser = () => {
 	};
 
 	const change = (e) => {
-		const { value, name } = e.target;
-		validateUser(name, value);
-		setForm({ ...form, [name]: value });
+		const { value, name, checked, type } = e.target;
+		const valueToUse = type === 'checkbox' ? checked : value;
+		validateUser(name, valueToUse);
+		setForm({ ...form, [name]: valueToUse });
 	};
 
 	const postNewUser = (newUser) => {
@@ -64,8 +66,12 @@ const NewUser = () => {
 		e.preventDefault();
 		const newUser = {
 			id: uuid(),
-			name: form.clientName,
-			email: form.email,
+			name: form.name,
+			email: form.email.trim(),
+			isAdmin: form.isAdmin === 'yes' ? true : false,
+			roles: ['Office Worker', 'Customer Service', 'Remote'].filter(
+				(role) => !!form[role]
+			),
 		};
 		postNewUser(newUser);
 	};
@@ -106,20 +112,48 @@ const NewUser = () => {
 						onChange={change}
 						value={form.email}
 					/>
-
+					{/* RADIOS */}
 					<h4>Is the user an Admin?</h4>
 					<label>Yes</label>
-					<input type="radio" name="isAdmin" value="Yes" />
+					<input
+						type="radio"
+						name="isAdmin"
+						value="yes"
+						onChange={change}
+						checked={form.isAdmin === 'yes'}
+					/>
 					<label>No</label>
-					<input type="radio" name="isAdmin" value="No" />
+					<input
+						type="radio"
+						name="isAdmin"
+						value="no"
+						onChange={change}
+						checked={form.isAdmin === 'no'}
+					/>
+					{/* CHECKBOXES */}
 					<h4>Assign Roles:</h4>
 					<div className="roles">
 						<label>Office Worker</label>
-						<input type="checkbox" value="Office Worker" />
+						<input
+							type="checkbox"
+							name="Office Worker"
+							checked={form['Office Worker']}
+							onChange={change}
+						/>
 						<label>Customer Service</label>
-						<input type="checkbox" value="Customer Service" />
+						<input
+							type="checkbox"
+							name="Customer Service"
+							checked={form['Customer Service']}
+							onChange={change}
+						/>
 						<label>Remote</label>
-						<input type="checkbox" value="Remote" />
+						<input
+							type="checkbox"
+							name="Remote"
+							checked={form['Remote']}
+							onChange={change}
+						/>
 					</div>
 					<div>
 						<Button disabled={disabled}>Create</Button>
