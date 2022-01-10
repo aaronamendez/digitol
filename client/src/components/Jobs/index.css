@@ -1,0 +1,8 @@
+.info-container .row-container {
+	display: flex;
+}
+
+.info-container .row-container .row {
+	display: inline;
+	width: 50%;
+}

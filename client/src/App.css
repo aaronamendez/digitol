@@ -1,0 +1,180 @@
+html {
+	background-color: grey;
+	/*  */
+	/* background-image: linear-gradient(
+		to bottom right,
+		rgb(109, 14, 225),
+		rgb(228, 199, 117)
+	); */
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(18, 5, 117),
+		rgb(107, 29, 9)
+	);
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+.App nav {
+	display: flex;
+	justify-content: flex-end;
+	margin: 1em;
+}
+
+.App nav a {
+	text-decoration: none;
+	margin: 1em;
+	padding: 1em;
+	/* Change color to black eventually, {DarkMode}*/
+	color: white;
+	transition: color, background-color, 0.5s;
+}
+
+.App nav a:hover {
+	border-radius: 0.5em;
+	background-color: rgb(78, 52, 85);
+	color: white;
+}
+
+.component-nav {
+	margin: 1em 2em;
+}
+
+.component-nav button {
+	float: right;
+}
+
+.component-container {
+	background-color: rgb(235, 235, 235);
+	color: black;
+	border-radius: 12px;
+	margin: 1em;
+	margin-top: 3em;
+	padding-bottom: 1em;
+	/* opacity: 0.5; */
+}
+
+.component-container h1 {
+	padding-left: 1em;
+	padding-top: 1em;
+	font-size: 1.5em;
+}
+
+.component-container h2 {
+	font-size: 1.3em;
+}
+
+.component-container h3 {
+	font-size: 1.2em;
+}
+
+.component-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.component-inner-card {
+	margin: 1em;
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+	transition: color, background-color, 0.5s;
+}
+
+.component-inner-card:hover {
+	background-color: rgb(82, 40, 71);
+	color: white;
+}
+
+.component-inner-card h2 {
+	font-size: 1.3em;
+}
+
+.info-container {
+	margin: 2em;
+	padding: 1em;
+	padding-bottom: 2em;
+	border: 1px solid black;
+	font-size: 1.3em;
+	border-radius: 5px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+.info-container h2 {
+	text-align: center;
+}
+
+.info-container p,
+h4 {
+	padding-top: 1em;
+}
+
+.info-container label input {
+	margin-left: 20%;
+}
+
+.info-container form {
+	width: 50%;
+}
+
+.info-container input[type='text'] {
+	width: 100%;
+	padding: 1em 1.2em;
+	margin: 0.8em 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.info-container h4 {
+	/* margin-bottom: 1em; */
+}
+
+.info-container .roles input[type='checkbox'] {
+	display: block;
+}
+
+.info-container .roles label {
+	font-size: 0.8em;
+}
+
+.info-container button {
+	margin-top: 1em;
+}
+
+.go-back {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 5em;
+}
+
+.go-back a {
+	text-decoration: none;
+}
+
+/* Disabled */
+button:disabled {
+	background-color: grey;
+}
+button:disabled:hover {
+	background-color: grey;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 500px) {
+	/* .App nav {
+		for test
+		background-color: red; 
+	} */
+
+	.App nav a {
+		margin: 0;
+	}
+}
