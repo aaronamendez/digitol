@@ -4,7 +4,7 @@ export const addClientValidations = yup.object().shape({
 	clientName: yup
 		.string()
 		.required('client name is required')
-		.min(5, 'client name must be at least 5 characters'),
+		.min(5, 'client name must be at least 2 characters'),
 	address: yup
 		.string()
 		.required('address is required')
@@ -15,7 +15,7 @@ export const addUserValidations = yup.object().shape({
 	name: yup
 		.string()
 		.required('name is required')
-		.min(5, 'name must be at least 2 characters'),
+		.min(2, 'name must be at least 2 characters'),
 	email: yup
 		.string()
 		.email('email is not a valid email address')

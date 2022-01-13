@@ -6,13 +6,16 @@ import { Routes, Route, Link } from 'react-router-dom';
 // Components
 import Dashboard from './components/Dashboard/Dashboard';
 import Clients from './components/Clients/Clients';
-import Client from './components/Clients/Client';
-import NewClient from './components/Clients/NewClient';
 import Jobs from './components/Jobs/Jobs';
-import Job from './components/Jobs/Job';
 import Users from './components/Users/Users';
+
+import Client from './components/Clients/Client';
+import Job from './components/Jobs/Job';
 import User from './components/Users/User';
+
 import NewUser from './components/Users/NewUser';
+import NewClient from './components/Clients/NewClient';
+import NewJob from './components/Jobs/NewJob';
 import ErrorNotFound from './components/Errors/ErrorNotFound';
 
 // Styles
@@ -38,9 +41,11 @@ function App() {
 
 				{/* Specified Routing */}
 				<Route path="/clients/:clientId" element={<Client />} />
-				<Route path="/clients/new" element={<NewClient />} />
 				<Route path="/jobs/:jobId" element={<Job />} />
 				<Route path="/users/:userId" element={<User />} />
+
+				<Route path="/clients/new" element={<NewClient />} />
+				<Route path="/jobs/new" element={<NewJob />} />
 				<Route path="/users/new" element={<NewUser />} />
 
 				{/* Error Route */}

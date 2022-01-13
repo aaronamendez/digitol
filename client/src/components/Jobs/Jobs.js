@@ -37,7 +37,9 @@ const Jobs = () => {
 					onChange={change}
 					value={search.value}
 				/>
-				<Button>Create New Job</Button>
+				<Link to={'/jobs/new'}>
+					<Button>Create New Job</Button>
+				</Link>
 			</div>
 			<div className="jobs-container">
 				{jobs
